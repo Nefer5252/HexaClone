@@ -1,12 +1,11 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import React from 'react';
 
-export default function TabLayout() {
+export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: true,  // Üst bar görünsün
+        headerShown: true, // Üst bar görünsün
         tabBarActiveTintColor: '#7b4cff', // Alt tab aktif renk
       }}
     >
@@ -14,6 +13,7 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Create',
+          headerTitle: 'Create Screen',
           tabBarIcon: ({ color }) => <Ionicons name="sparkles" size={24} color={color} />,
         }}
       />
@@ -21,6 +21,7 @@ export default function TabLayout() {
         name="art"
         options={{
           title: 'AI Art',
+          headerTitle: 'AI Art Screen',
           tabBarIcon: ({ color }) => <Ionicons name="image" size={24} color={color} />,
         }}
       />
@@ -28,14 +29,16 @@ export default function TabLayout() {
         name="templates"
         options={{
           title: 'Templates',
-          tabBarButton: () => null,  // Alt tab bar'dan gizle
+          headerTitle: 'Templates Screen',
+          tabBarIcon: ({ color }) => <Ionicons name="leaf" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="library"
         options={{
           title: 'Library',
-          tabBarButton: () => null,  // Alt tab bar'dan gizle
+          headerTitle: 'Library Screen',
+          tabBarIcon: ({ color }) => <Ionicons name="grid" size={24} color={color} />,
         }}
       />
     </Tabs>
