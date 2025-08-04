@@ -1,21 +1,23 @@
+// app/(tabs)/layout.tsx
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
 
-export default function TabsLayout() {
+export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: true,               // Üst bar burada açık olacak
-        tabBarActiveTintColor: '#7b4cff' // Alt tab bar renk
+        headerShown: true,            // Üst bar görünsün
+        tabBarActiveTintColor: '#7b4cff',  // Aktif alt tab rengi
       }}
     >
+      {/* İSTEDİĞİN TABLAR */}
       <Tabs.Screen
         name="index"
         options={{
           title: 'Create',
           tabBarIcon: ({ color }) => <Ionicons name="sparkles" size={24} color={color} />,
-          headerTitle: 'Hexa Create Screen',
+          headerTitle: 'Create Screen', // Üst bar başlığı
         }}
       />
       <Tabs.Screen
@@ -23,7 +25,7 @@ export default function TabsLayout() {
         options={{
           title: 'AI Art',
           tabBarIcon: ({ color }) => <Ionicons name="image" size={24} color={color} />,
-          headerTitle: 'Hexa AI Art Screen',
+          headerTitle: 'AI Art Screen',
         }}
       />
       <Tabs.Screen
@@ -31,7 +33,7 @@ export default function TabsLayout() {
         options={{
           title: 'Templates',
           tabBarIcon: ({ color }) => <Ionicons name="leaf" size={24} color={color} />,
-          headerTitle: 'Hexa Templates Screen',
+          headerTitle: 'Templates Screen',
         }}
       />
       <Tabs.Screen
@@ -39,9 +41,10 @@ export default function TabsLayout() {
         options={{
           title: 'Library',
           tabBarIcon: ({ color }) => <Ionicons name="grid" size={24} color={color} />,
-          headerTitle: 'Hexa Library Screen',
+          headerTitle: 'Library Screen',
         }}
       />
+      {/* Gereksiz diğer sekmeler veya sayfalar buraya eklenmemeli */}
     </Tabs>
   );
 }
