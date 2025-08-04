@@ -1,32 +1,30 @@
+import { useColorScheme } from '@/hooks/useColorScheme';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/useColorScheme';
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
 
-  // Font yolunu kendi projene göre buradan kontrol et
   const [loaded] = useFonts({
     SpaceMono: require('../../assets/fonts/SpaceMono-Regular.ttf'),
   });
 
-  if (!loaded) {
-    return null;
-  }
+  if (!loaded) return null;
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack screenOptions={{ headerShown: true }}>
-        {/* (tabs) dizini altındaki sayfalar için burası root */}
+      <Stack
+        screenOptions={{
+          headerShown: false, // Root layout'ta üst barı kapatıyoruz, (tabs) ekranında göstereceğiz.
+        }}
+      >
         <Stack.Screen name="(tabs)" />
-        {/* Not found sayfası */}
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
   );
 }
+
