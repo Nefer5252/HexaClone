@@ -1,7 +1,8 @@
+// app/(tabs)/index.tsx
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function HomeScreen() {
+export default function CreateScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Hexa Create Screen</Text>
@@ -11,5 +12,5 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#000', justifyContent: 'center', alignItems: 'center' },
-  text: { color: 'white', fontSize: 20 },
+  text:      { color: '#fff', fontSize: 20 },
 });
