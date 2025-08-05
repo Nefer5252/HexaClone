@@ -1,8 +1,9 @@
+// app/(tabs)/_layout.tsx
 import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
 
-export default function TabLayout() {
+export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
@@ -15,32 +16,32 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Create',
+          headerTitle: 'Hexa',
           tabBarIcon: ({ color }) => <Ionicons name="sparkles" size={24} color={color} />,
-          headerTitle: 'Create',
         }}
       />
       <Tabs.Screen
         name="art"
         options={{
           title: 'AI Art',
-          tabBarIcon: ({ color }) => <Ionicons name="image" size={24} color={color} />,
           headerTitle: 'AI Art',
+          tabBarIcon: ({ color }) => <Ionicons name="image" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="templates"
         options={{
           title: 'Templates',
-          tabBarIcon: ({ color }) => <Ionicons name="leaf" size={24} color={color} />,
           headerTitle: 'Templates',
+          tabBarIcon: ({ color }) => <Ionicons name="leaf" size={24} color={color} />,
         }}
       />
       <Tabs.Screen
         name="library"
         options={{
           title: 'Library',
-          tabBarIcon: ({ color }) => <Ionicons name="grid" size={24} color={color} />,
           headerTitle: 'Library',
+          tabBarIcon: ({ color }) => <Ionicons name="grid" size={24} color={color} />,
         }}
       />
     </Tabs>

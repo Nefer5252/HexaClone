@@ -1,21 +1,16 @@
+// app/(tabs)/index.tsx
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Header from '../../components/Header';
 
-export default function HomeScreen() {
+export default function CreateScreen() {
   return (
     <View style={styles.container}>
-      <Header />
-      <Text style={styles.text}>Qualifications</Text>
+      <Text style={styles.text}>Hexa Create Screen</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#000' },
-  text: { color: 'white', fontSize: 20 },
+  container: { flex: 1, backgroundColor: '#000', justifyContent: 'center', alignItems: 'center' },
+  text:      { color: '#fff', fontSize: 20 },
 });
-
-export const screenOptions = {
-  headerShown: false, // Üst bar layout’taki üst barı kullanmak için kapatıyoruz
-};
