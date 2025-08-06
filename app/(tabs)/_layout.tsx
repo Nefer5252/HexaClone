@@ -1,47 +1,46 @@
-// app/(tabs)/_layout.tsx
-import { Ionicons } from '@expo/vector-icons';
-import { Tabs } from 'expo-router';
-import React from 'react';
 
-export default function TabsLayout() {
+import { MaterialIcons } from '@expo/vector-icons';
+import { Tabs } from 'expo-router';
+
+export default function TabLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        headerShown: true,
-        tabBarActiveTintColor: '#7b4cff',
-        tabBarStyle: { height: 60 },
-      }}
-    >
+    <Tabs screenOptions={{ headerShown: false }}>
       <Tabs.Screen
-        name="index"
+        name="Home"
         options={{
           title: 'Create',
-          headerTitle: 'Hexa',
-          tabBarIcon: ({ color }) => <Ionicons name="sparkles" size={24} color={color} />,
+          tabBarIcon: ({ color, size }) => (
+            /* replaced “sparkles” with valid “auto-awesome” */
+            <MaterialIcons name="auto-awesome" size={size} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
-        name="art"
+        name="Art"
         options={{
           title: 'AI Art',
-          headerTitle: 'AI Art',
-          tabBarIcon: ({ color }) => <Ionicons name="image" size={24} color={color} />,
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="image" size={size} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
-        name="templates"
+        name="Templates"
         options={{
           title: 'Templates',
-          headerTitle: 'Templates',
-          tabBarIcon: ({ color }) => <Ionicons name="leaf" size={24} color={color} />,
+          tabBarIcon: ({ color, size }) => (
+            /* replaced “compass” with valid “explore” */
+            <MaterialIcons name="explore" size={size} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
-        name="library"
+        name="Library"
         options={{
           title: 'Library',
-          headerTitle: 'Library',
-          tabBarIcon: ({ color }) => <Ionicons name="grid" size={24} color={color} />,
+          tabBarIcon: ({ color, size }) => (
+            <MaterialIcons name="grid-view" size={size} color={color} />
+          ),
         }}
       />
     </Tabs>

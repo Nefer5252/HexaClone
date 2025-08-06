@@ -1,74 +1,125 @@
-import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const Header = () => {
+export default function Header() {
+  const router = useRouter();
   return (
-    <View style={styles.container}>
-      <Text style={styles.logo}>Hexa</Text>
-      <View style={styles.rightSection}>
-        <TouchableOpacity style={styles.badge}>
-          <Text style={styles.badgeText}>Pro</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.coins}>
-          <Ionicons name="wallet" size={16} color="white" />
-          <Text style={styles.coinsText}>50</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.icon}>
-          <Ionicons name="settings-outline" size={24} color="white" />
-        </TouchableOpacity>
+    <SafeAreaView edges={['top']} style={styles.safeArea}>
+      {/* Status bar area */}
+      <View style={styles.statusBar}>
+        <Text style={styles.statusText}>23:09</Text>
+        <View style={styles.dynamicIsland}>
+          <MaterialIcons name="videocam" size={16} color="#fff" />
+        </View>
+        <View style={styles.statusIcons}>
+          <MaterialIcons name="wifi" size={16} color="#fff" />
+          <MaterialIcons name="battery-full" size={16} color="#fff" style={styles.iconSpacing} />
+        </View>
       </View>
-    </View>
-  );
-};
+      {/* App header */}
+      <View style={styles.header}>
+        <View style={styles.leftGroup}>
+          <Image source={require('../app/assets/logo.png')} style={styles.logo} />
+          <Text style={styles.title}>Hexa</Text>
+        </View>
+        <View style={styles.rightGroup}>
+          <View style={[styles.badge, styles.proBadge]}>
+            <Text style={styles.badgeText}>Pro</Text>
+          </View>
+          <View style={[styles.badge, styles.coinBadge]}>
+            <Text style={styles.badgeText}>50</Text>
+          </View>
+         <TouchableOpacity onPress={() => router.push('settings')} style={styles.settingsButton}>
+  <MaterialIcons name="settings" size={24} color="#fff" />
+</TouchableOpacity>
 
-export default Header;
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+}
 
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: 30,
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-    backgroundColor: '#0a0a0a',
+  safeArea: {
+    backgroundColor: '#000',
+  },
+  statusBar: {
+    height: 32,
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-between',
+    paddingHorizontal: 12,
+  },
+  statusText: {
+    color: '#fff',
+    fontSize: 12,
+  },
+  dynamicIsland: {
+    flex: 1,
+    height: 24,
+    marginHorizontal: 12,
+    backgroundColor: '#222',
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  statusIcons: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  iconSpacing: {
+    marginLeft: 4,
+  },
+  header: {
+    height: 56,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    backgroundColor: '#111',
+  },
+  leftGroup: {
+    flexDirection: 'row',
     alignItems: 'center',
   },
   logo: {
-    fontSize: 26,
-    color: 'white',
+    width: 24,
+    height: 24,
+    marginRight: 8,
+  },
+  title: {
+    color: '#fff',
+    fontSize: 20,
     fontWeight: 'bold',
   },
-  rightSection: {
+  rightGroup: {
     flexDirection: 'row',
     alignItems: 'center',
   },
   badge: {
-    backgroundColor: '#f7a13b',
-    paddingHorizontal: 10,
+    paddingHorizontal: 8,
     paddingVertical: 4,
-    borderRadius: 8,
+    borderRadius: 12,
     marginRight: 8,
+  },
+  proBadge: {
+    backgroundColor: '#C47CF0',
+  },
+  coinBadge: {
+    backgroundColor: '#5E2CE7',
   },
   badgeText: {
-    color: 'white',
+    color: '#fff',
+    fontSize: 12,
     fontWeight: '600',
   },
-  coins: {
-    backgroundColor: '#7b4cff',
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 10,
-    paddingVertical: 4,
-    borderRadius: 8,
-    marginRight: 8,
-  },
-  coinsText: {
-    color: 'white',
-    marginLeft: 4,
-    fontWeight: '600',
-  },
-  icon: {
+  settingsButton: {
     padding: 4,
   },
 });
+
+
+
