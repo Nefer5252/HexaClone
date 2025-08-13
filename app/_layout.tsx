@@ -5,12 +5,11 @@ export default function RootLayout() {
   return (
     <Stack
       screenOptions={{
-        header: () => <Header />,  // render our custom header on every screen
+        header: () => <Header />,  // our custom top bar
         headerShown: true,
       }}
     >
       <Stack.Screen name="(tabs)" />
-      {/* add other stack screens here if needed */}
     </Stack>
   );
 }
