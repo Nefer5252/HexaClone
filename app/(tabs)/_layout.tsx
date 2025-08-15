@@ -7,7 +7,7 @@ export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: true,
+        headerShown: false,
         tabBarActiveTintColor: '#7b4cff',
         tabBarStyle: { height: 60 },
       }}
@@ -16,32 +16,40 @@ export default function TabsLayout() {
         name="index"
         options={{
           title: 'Create',
-          headerTitle: 'Hexa',
-          tabBarIcon: ({ color }) => <Ionicons name="sparkles" size={24} color={color} />,
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="sparkles" size={24} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="art"
         options={{
           title: 'AI Art',
-          headerTitle: 'AI Art',
-          tabBarIcon: ({ color }) => <Ionicons name="image" size={24} color={color} />,
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="image" size={24} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="templates"
         options={{
           title: 'Templates',
-          headerTitle: 'Templates',
-          tabBarIcon: ({ color }) => <Ionicons name="leaf" size={24} color={color} />,
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="leaf" size={24} color={color} />
+          ),
         }}
       />
       <Tabs.Screen
         name="library"
         options={{
           title: 'Library',
-          headerTitle: 'Library',
-          tabBarIcon: ({ color }) => <Ionicons name="grid" size={24} color={color} />,
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="grid" size={24} color={color} />
+          ),
         }}
       />
     </Tabs>
