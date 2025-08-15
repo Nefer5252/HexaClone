@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function NotFound() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Oops! Sayfa bulunamadı.</Text>
+      <Text style={styles.text}>Oops! Page is unvisible.</Text>
     </View>
   );
 }

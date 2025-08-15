@@ -25,7 +25,7 @@ export default function LibraryScreen() {
       </View>
 
       {/* Title */}
-      <Text style={styles.title}>Kütüphane</Text>
+      <Text style={styles.title}>Library</Text>
 
       {/* Empty preview skeletons */}
       <View style={styles.skeletonGrid}>
@@ -51,16 +51,15 @@ export default function LibraryScreen() {
 
       {/* Empty state text */}
       <View style={styles.emptyTextWrap}>
-        <Text style={styles.emptyTitle}>Henüz Tasarımın Yok</Text>
+        <Text style={styles.emptyTitle}>You Dont Have Any Designs Yet</Text>
         <Text style={styles.emptySub}>
-          Oluştur düğmesine dokun ve AI Tasarım dünyasına dal. Fikirlerini
-          gerçeğe dönüştür
+          Tap the generate button and dive into the Al Design world.Turn ideas into reality!s
         </Text>
       </View>
 
       {/* Create button */}
       <TouchableOpacity style={styles.createBtn} activeOpacity={0.9}>
-        <Text style={styles.createBtnText}>Oluştur</Text>
+        <Text style={styles.createBtnText}>Generate</Text>
         <Ionicons name="sparkles" size={18} color="#fff" />
       </TouchableOpacity>
     </SafeAreaView>

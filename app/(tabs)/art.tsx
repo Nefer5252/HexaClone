@@ -59,7 +59,7 @@ export default function ArtScreen() {
     () => [
       {
         id: 'w1',
-        title: 'A young man listening to music',
+        title: 'Aykut listening to music',
         tag: 'Anime',
         variant: 'wide',
       },
@@ -146,16 +146,16 @@ export default function ArtScreen() {
             {/* Prompt / Create Section */}
             <View style={styles.createSection}>
               <View style={styles.createHeaderRow}>
-                <Text style={styles.createTitle}>Lütfen Metin Giriniz</Text>
+                <Text style={styles.createTitle}>Enter Your Prompt</Text>
                 <View style={styles.surpriseRow}>
                   <Ionicons name="sparkles" size={16} color="#cfd3ff" />
-                  <Text style={styles.surpriseText}>Beni şaşırt</Text>
+                  <Text style={styles.surpriseText}>Surprise me</Text>
                 </View>
               </View>
               <View style={styles.promptBox}>
                 <TextInput
                   style={styles.promptInput}
-                  placeholder="Sakin bir gölde gün doğumunda küçük bir yelkenli tekne resmi"
+                  placeholder="ederson-singo-davidson-kim min jae-jakobs-lemina-torreira-ilkay-sane-barış-osimhen"
                   placeholderTextColor="#c7cbe3"
                   multiline
                   value={promptText}
@@ -166,13 +166,13 @@ export default function ArtScreen() {
                   activeOpacity={0.8}
                 >
                   <Ionicons name="image" size={16} color="#fff" />
-                  <Text style={styles.addImageText}>Resim Ekle</Text>
+                  <Text style={styles.addImageText}>Add Image</Text>
                 </TouchableOpacity>
                 <Text style={styles.charCount}>{promptText.length}/500</Text>
               </View>
 
               <View style={styles.aspectRowWrap}>
-                <Text style={styles.aspectLabel}>En Boy Oranı:</Text>
+                <Text style={styles.aspectLabel}>Aspect Ratio:</Text>
                 <View style={styles.aspectRow}>
                   <TouchableOpacity
                     onPress={() => setAspect('9:16')}
@@ -226,18 +226,19 @@ export default function ArtScreen() {
               </View>
 
               <View style={styles.styleHeaderRow}>
-                <Text style={styles.styleTitle}>Stili Seçin</Text>
-                <Text style={styles.seeAll}>Hepsini Gör</Text>
+                <Text style={styles.styleTitle}>Select Style</Text>
+                <Text style={styles.seeAll}>See all</Text>
               </View>
 
               <FlatList
                 horizontal
                 data={[
-                  { id: 'none', label: 'Stilsiz' },
+                  { id: 'none', label: 'No style' },
                   { id: 'anime', label: 'Anime' },
-                  { id: 'fantasy', label: 'Fantastik' },
-                  { id: 'scifi', label: 'Bilimkurgu' },
-                  { id: 'realism', label: 'Gerçekçilik' },
+                  { id: 'fantasy', label: 'Fantasy' },
+                  { id: 'scifi', label: 'Sci-fi' },
+                  { id: 'realism', label: 'Cyberpunk' },
+                  
                 ]}
                 keyExtractor={(i) => i.id}
                 contentContainerStyle={styles.styleList}

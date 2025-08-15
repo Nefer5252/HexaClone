@@ -58,53 +58,53 @@ export default function TemplatesScreen() {
       () => [
         {
           id: 'album',
-          title: 'Albüm Kapağı',
+          title: 'All',
           items: [
-            { id: 'a1', title: 'Keep Climbing', isPro: false },
-            { id: 'a2', title: 'Freedom in Simplicity', isPro: false },
-            { id: 'a3', title: 'Dream Wave', isPro: false },
-            { id: 'a4', title: 'Golden Hour', isPro: true },
+            { id: 'a1', title: 'Garden Design', isPro: false },
+            { id: 'a2', title: 'Logo', isPro: false },
+            { id: 'a3', title: 'Car Design', isPro: false },
+            { id: 'a4', title: 'Sticker Design', isPro: true },
           ],
         },
         {
           id: 'signature',
-          title: 'İmza',
+          title: 'Poster',
           items: [
-            { id: 's1', title: 'Fluid Touch', isPro: true },
-            { id: 's2', title: 'Timeflow', isPro: false },
-            { id: 's3', title: 'Elegance', isPro: false },
+            { id: 's1', title: 'sci-Fi', isPro: true },
+            { id: 's2', title: 'National Day', isPro: false },
+            { id: 's3', title: 'Nature', isPro: false },
           ],
         },
         {
           id: 'invite',
-          title: 'Davet',
+          title: 'Invitation',
           items: [
             { id: 'i1', title: 'Wedding', isPro: false },
-            { id: 'i2', title: 'Classic Floral', isPro: false },
+            { id: 'i2', title: 'Funeral', isPro: false },
             { id: 'i3', title: 'Birthday Party', isPro: false },
           ],
         },
         {
           id: 'clothes',
-          title: 'Giysi',
+          title: 'Garment',
           items: [
             { id: 'c1', title: 'Hoodie', isPro: false },
             { id: 'c2', title: 'T-Shirt', isPro: false },
-            { id: 'c3', title: 'Tank Top', isPro: false },
+            { id: 'c3', title: 'Suit', isPro: false },
           ],
         },
         {
           id: 'car',
-          title: 'Araba Tasarımı',
+          title: 'Car',
           items: [
-            { id: 'car1', title: 'Minimalism', isPro: true },
-            { id: 'car2', title: 'Tankcy', isPro: false },
-            { id: 'car3', title: 'Rally Sport', isPro: false },
+            { id: 'car1', title: 'Sport', isPro: true },
+            { id: 'car2', title: 'Suv', isPro: false },
+            { id: 'car3', title: 'Classic', isPro: false },
           ],
         },
         {
           id: 'sticker',
-          title: 'Sticker Tasarımı',
+          title: 'Sticker',
           items: [
             { id: 'st1', title: 'Pixel Cat', isPro: false },
             { id: 'st2', title: 'Cartoon Cop', isPro: false },
@@ -113,11 +113,11 @@ export default function TemplatesScreen() {
         },
         {
           id: 'poster',
-          title: 'Poster',
+          title: 'Signature',
           items: [
-            { id: 'p1', title: 'Clarity Defined', isPro: true },
-            { id: 'p2', title: 'Big Type', isPro: false },
-            { id: 'p3', title: 'Modern', isPro: false },
+            { id: 'p1', title: 'simple', isPro: true },
+            { id: 'p2', title: 'fashionable', isPro: false },
+            { id: 'p3', title: 'pro', isPro: false },
           ],
         },
       ],
@@ -150,7 +150,7 @@ export default function TemplatesScreen() {
           <View key={sec.id} style={styles.section}>
             <View style={styles.sectionHeader}>
               <Text style={styles.sectionTitle}>{sec.title}</Text>
-              <Text style={styles.seeAll}>Hepsini Gör</Text>
+              <Text style={styles.seeAll}>See All</Text>
             </View>
             <FlatList
               data={sec.items}
