@@ -1,4 +1,4 @@
-{
+   {
   "expo": {
     "name": "HexaClone",
     "slug": "HexaClone",
@@ -9,9 +9,12 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.nevzat.hexaclone",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
+        "package": "com.nevzat.hexaclone",
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -23,20 +26,29 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
-      ]
-    ],
-    "experiments": {
-      "typedRoutes": true
+   "plugins": [
+  "expo-router",
+  [
+    "expo-build-properties",
+    {
+      "ios": {
+        "useFrameworks": "static"
+      }
     }
-  }
+  ],
+  "@react-native-firebase/app",
+  "@react-native-firebase/auth",
+  [
+    "expo-splash-screen",
+    {
+      "image": "./assets/images/splash-icon.png",
+      "imageWidth": 200,
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    }
+  ]
+],
+"experiments": {
+  "typedRoutes": true
 }
+  }}
